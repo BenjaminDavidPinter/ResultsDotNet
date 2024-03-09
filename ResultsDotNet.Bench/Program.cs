@@ -38,7 +38,8 @@ namespace MyBenchmarks
             string s = null!;
             var results = StringTestResult(s) switch
             {
-                var errResult when errResult.IsErr<Exception>() => true
+                var errResult when errResult.IsErr<Exception>() => true,
+                _ => throw new NotImplementedException("Should never get here")
             };
 
             if (results)

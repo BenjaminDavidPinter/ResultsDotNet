@@ -9,8 +9,8 @@ public class Result<T> : IEquatable<T>
 {
 
     /// <summary>
-    /// Backing store for Exception object
     /// </summary>
+    /// Backing store for Exception object
     private Exception? ErrorObject { get; }
 
     /// <summary>
@@ -167,5 +167,15 @@ public class Result<T> : IEquatable<T>
     public bool Equals(T? other)
     {
         return other?.Equals(ValueInternal) ?? false;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return base.Equals(obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
     }
 }
